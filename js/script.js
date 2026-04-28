@@ -137,6 +137,47 @@
 })();
 
 /* ============================================================
+   MOBILE NAV TOGGLE
+   ============================================================ */
+(function () {
+    const hamburger = document.getElementById('nav-hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    if (!hamburger || !mobileNav) return;
+
+    function openMenu() {
+        hamburger.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        mobileNav.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+        if (hamburger.classList.contains('open')) closeMenu();
+        else openMenu();
+    });
+
+    mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    mobileNav.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeMenu();
+    });
+})();
+
+/* ============================================================
    SCROLL REVEAL
    ============================================================ */
 (function () {

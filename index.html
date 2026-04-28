@@ -32,8 +32,27 @@
                 <span class="lang-sep">|</span>
                 <button class="lang-btn" data-lang="en">EN</button>
             </div>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Menu de navegação">
+        <a href="#terminal" class="mobile-nav-link">Terminal</a>
+        <a href="#skills" class="mobile-nav-link">Skills</a>
+        <a href="#experience" class="mobile-nav-link" data-i18n="nav.experience">Experiência</a>
+        <a href="#education" class="mobile-nav-link" data-i18n="nav.education">Formação</a>
+        <a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Contato</a>
+        <div class="mobile-nav-lang">
+            <button class="lang-btn" data-lang="pt-BR">PT</button>
+            <span class="lang-sep">|</span>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
 
     <!-- Hero -->
     <section id="hero" class="hero">
@@ -82,16 +101,16 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-line"></div>
-            <span>scroll</span>
-        </div>
+        <a href="#terminal" class="scroll-indicator" aria-label="Scroll down">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
     <!-- Terminal -->
     <section id="terminal" class="terminal-section">
         <div class="section-header reveal">
-            <span class="section-tag">// interface</span>
+            <span class="section-tag">// terminal</span>
             <h2 data-i18n="sec.terminal">Terminal Interativo</h2>
             <p data-i18n-html="terminal.desc">Explore meu perfil como um verdadeiro DevOps. Digite <code>help</code> para começar.</p>
         </div>
