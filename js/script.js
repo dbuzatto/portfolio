@@ -569,7 +569,7 @@
             'nav.experience':       'Experiência',
             'nav.education':        'Formação',
             'nav.contact':          'Contato',
-            'hero.badge':           'Em rota para se tornar Kubestronaut',
+            'hero.badge':           'Em rota para me tornar Kubestronaut',
             'hero.desc':            'Analista DevOps Jr na <strong>Casa do Construtor</strong> · Rio Claro, SP<br>Apaixonado por Kubernetes, automação e infraestrutura cloud-native.',
             'hero.cta.terminal':    'Abrir Terminal',
             'hero.stat.years':      'Anos de Experiência',
