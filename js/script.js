@@ -6,6 +6,18 @@
     const ctx = canvas.getContext('2d');
     let particles = [];
     let raf;
+    const mouse = { x: -9999, y: -9999 };
+    const MOUSE_RADIUS = 160;
+
+    window.addEventListener('mousemove', e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    window.addEventListener('mouseleave', () => {
+        mouse.x = -9999;
+        mouse.y = -9999;
+    });
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -20,15 +32,33 @@
             r: Math.random() * 1.4 + 0.4,
             vx: (Math.random() - 0.5) * 0.25,
             vy: (Math.random() - 0.5) * 0.25,
+            baseVx: 0,
+            baseVy: 0,
             pulse: Math.random() * Math.PI * 2,
             opacity: Math.random() * 0.5 + 0.15,
         }));
+        particles.forEach(p => { p.baseVx = p.vx; p.baseVy = p.vy; });
     }
 
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         particles.forEach(p => {
+            const mdx = mouse.x - p.x;
+            const mdy = mouse.y - p.y;
+            const md = Math.sqrt(mdx * mdx + mdy * mdy);
+
+            if (md < MOUSE_RADIUS && md > 0) {
+                const force = (MOUSE_RADIUS - md) / MOUSE_RADIUS * 0.018;
+                p.vx += (mdx / md) * force;
+                p.vy += (mdy / md) * force;
+                const spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+                if (spd > 1.4) { p.vx *= 1.4 / spd; p.vy *= 1.4 / spd; }
+            } else {
+                p.vx += (p.baseVx - p.vx) * 0.02;
+                p.vy += (p.baseVy - p.vy) * 0.02;
+            }
+
             p.x += p.vx;
             p.y += p.vy;
             p.pulse += 0.012;
@@ -59,6 +89,18 @@
                     ctx.lineWidth = 0.6;
                     ctx.stroke();
                 }
+            }
+
+            const mdx = mouse.x - particles[i].x;
+            const mdy = mouse.y - particles[i].y;
+            const md = Math.sqrt(mdx * mdx + mdy * mdy);
+            if (md < MOUSE_RADIUS) {
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(mouse.x, mouse.y);
+                ctx.strokeStyle = `rgba(0,212,255,${0.18 * (1 - md / MOUSE_RADIUS)})`;
+                ctx.lineWidth = 0.7;
+                ctx.stroke();
             }
         }
 
