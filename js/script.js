@@ -262,6 +262,7 @@
   <tr><td>contact</td><td>→ Formas de contato</td></tr>
   <tr><td>github</td><td>→ Abrir GitHub (nova aba)</td></tr>
   <tr><td>linkedin</td><td>→ Abrir LinkedIn (nova aba)</td></tr>
+  <tr><td>projects</td><td>→ Projetos em destaque</td></tr>
   <tr><td>ls</td><td>→ Listar seções do portfólio</td></tr>
   <tr><td>clear</td><td>→ Limpar terminal</td></tr>
 </table>`,
@@ -339,6 +340,19 @@
   <tr><td>linkedin</td><td>linkedin.com/in/diogo-buzatto-352093204</td></tr>
   <tr><td>location</td><td>Rio Claro, SP · Brasil</td></tr>
 </table>`,
+            projects: `
+<div class="output-header">Projetos em Destaque:</div>
+<span class="output-empty"></span>
+<div class="output-accent">▸ Migração AWS → OCI</div>
+<div class="output-text">&nbsp;&nbsp;Casa do Construtor · ~6 meses</div>
+<span class="output-empty"></span>
+<div class="output-text">&nbsp;&nbsp;Migração completa da infraestrutura cloud da AWS para OCI,</div>
+<div class="output-text">&nbsp;&nbsp;reduzindo R$60.000/mês em custos operacionais.</div>
+<div class="output-text">&nbsp;&nbsp;Adição de ambiente de homologação (antes apenas desenvolvimento e produção).</div>
+<span class="output-empty"></span>
+<div class="output-text">&nbsp;&nbsp;Stack: Kubernetes · Docker · Linux · GitLab · Prometheus · Grafana</div>
+<span class="output-empty"></span>
+<div class="output-success">🏆 Reconhecido pela empresa pela entrega do projeto.</div>`,
             github_open:   '✓ Abrindo github.com/dbuzatto numa nova aba...',
             linkedin_open: '✓ Abrindo LinkedIn numa nova aba...',
             err_permission: 'Permissão negada. Boa tentativa. 😏',
@@ -359,6 +373,7 @@
   <tr><td>contact</td><td>→ Contact info</td></tr>
   <tr><td>github</td><td>→ Open GitHub (new tab)</td></tr>
   <tr><td>linkedin</td><td>→ Open LinkedIn (new tab)</td></tr>
+  <tr><td>projects</td><td>→ Featured projects</td></tr>
   <tr><td>ls</td><td>→ List portfolio sections</td></tr>
   <tr><td>clear</td><td>→ Clear terminal</td></tr>
 </table>`,
@@ -436,6 +451,19 @@
   <tr><td>linkedin</td><td>linkedin.com/in/diogo-buzatto-352093204</td></tr>
   <tr><td>location</td><td>Rio Claro, SP · Brazil</td></tr>
 </table>`,
+            projects: `
+<div class="output-header">Featured Projects:</div>
+<span class="output-empty"></span>
+<div class="output-accent">▸ AWS → OCI Migration</div>
+<div class="output-text">&nbsp;&nbsp;Casa do Construtor · ~6 months</div>
+<span class="output-empty"></span>
+<div class="output-text">&nbsp;&nbsp;Complete cloud infrastructure migration from AWS to OCI,</div>
+<div class="output-text">&nbsp;&nbsp;reducing R$60,000/month in operational costs.</div>
+<div class="output-text">&nbsp;&nbsp;Added staging environment (previously only development and production).</div>
+<span class="output-empty"></span>
+<div class="output-text">&nbsp;&nbsp;Stack: Kubernetes · Docker · Linux · GitLab · Prometheus · Grafana</div>
+<span class="output-empty"></span>
+<div class="output-success">🏆 Recognized by the company for delivering the project.</div>`,
             github_open:   '✓ Opening github.com/dbuzatto in a new tab...',
             linkedin_open: '✓ Opening LinkedIn in a new tab...',
             err_permission: 'Permission denied. Nice try. 😏',
@@ -456,13 +484,15 @@
         experience() { return tCmd('experience'); },
         education()  { return tCmd('education'); },
         goal()       { return tCmd('goal'); },
+        projects()   { return tCmd('projects'); },
         contact()    { return tCmd('contact'); },
 
         ls() {
             return `
-<div class="output-text"><span class="output-accent">drwxr-xr-x</span> &nbsp;hero/</div>
+<div class="output-text"><span class="output-accent">drwxr-xr-x</span> &nbsp;whoami/</div>
 <div class="output-text"><span class="output-accent">drwxr-xr-x</span> &nbsp;skills/</div>
 <div class="output-text"><span class="output-accent">drwxr-xr-x</span> &nbsp;experience/</div>
+<div class="output-text"><span class="output-accent">drwxr-xr-x</span> &nbsp;projects/</div>
 <div class="output-text"><span class="output-accent">drwxr-xr-x</span> &nbsp;education/</div>
 <div class="output-text"><span class="output-accent">-rw-r--r--</span> &nbsp;contact.txt</div>
 <div class="output-text"><span class="output-accent">-rw-r--r--</span> &nbsp;goal.md</div>`;
@@ -596,6 +626,7 @@
     const T = {
         'pt-BR': {
             'nav.experience':       'Experiência',
+            'nav.projects':         'Projetos',
             'nav.education':        'Formação',
             'nav.contact':          'Contato',
             'hero.badge':           'Em rota para me tornar Kubestronaut',
@@ -624,6 +655,15 @@
             'exp.role1':            'Analista DevOps Jr',
             'exp.role2':            'Assistente de Infraestrutura',
             'exp.role3':            'Estagiário de Infraestrutura',
+            'tag.projects':         '// projetos',
+            'sec.projects':         'Projetos em Destaque',
+            'proj.title1':          'Migração AWS → OCI',
+            'proj.award':           'Reconhecido',
+            'proj.metric.saving':   '/mês economizados',
+            'proj.metric.months':   'meses de projeto',
+            'proj.metric.envs':     'ambientes entregues',
+            'proj.desc1':           'Migração completa da infraestrutura cloud da AWS para OCI, reduzindo R$60.000/mês em custos operacionais. O projeto envolveu a reconstrução total dos ambientes, adição de um novo ambiente de homologação (antes apenas desenvolvimento e produção).',
+            'proj.linkedin':        'Ver reconhecimento no LinkedIn',
             'tag.education':        '// formação',
             'sec.education':        'Educação & Certificações',
             'edu.degree1':          'Engenharia da Computação',
@@ -644,6 +684,7 @@
         },
         'en': {
             'nav.experience':       'Experience',
+            'nav.projects':         'Projects',
             'nav.education':        'Education',
             'nav.contact':          'Contact',
             'hero.badge':           'On track to become a Kubestronaut',
@@ -672,6 +713,15 @@
             'exp.role1':            'Jr DevOps Analyst',
             'exp.role2':            'Infrastructure Assistant',
             'exp.role3':            'Infrastructure Intern',
+            'tag.projects':         '// projects',
+            'sec.projects':         'Featured Projects',
+            'proj.title1':          'AWS → OCI Migration',
+            'proj.award':           'Recognized',
+            'proj.metric.saving':   '/month saved',
+            'proj.metric.months':   'months of work',
+            'proj.metric.envs':     'environments delivered',
+            'proj.desc1':           'Complete cloud infrastructure migration from AWS to OCI, reducing R$60,000/month in operational costs. The project involved rebuilding all environments and adding a new staging environment (previously only development and production).',
+            'proj.linkedin':        'See recognition on LinkedIn',
             'tag.education':        '// education',
             'sec.education':        'Education & Certifications',
             'edu.degree1':          'Computer Engineering',

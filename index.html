@@ -24,6 +24,7 @@
                 <a href="#terminal" class="nav-link">Terminal</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#experience" class="nav-link" data-i18n="nav.experience">Experiência</a>
+                <a href="#projects" class="nav-link" data-i18n="nav.projects">Projetos</a>
                 <a href="#education" class="nav-link" data-i18n="nav.education">Formação</a>
                 <a href="#contact" class="nav-link" data-i18n="nav.contact">Contato</a>
             </div>
@@ -45,6 +46,7 @@
         <a href="#terminal" class="mobile-nav-link">Terminal</a>
         <a href="#skills" class="mobile-nav-link">Skills</a>
         <a href="#experience" class="mobile-nav-link" data-i18n="nav.experience">Experiência</a>
+        <a href="#projects" class="mobile-nav-link" data-i18n="nav.projects">Projetos</a>
         <a href="#education" class="mobile-nav-link" data-i18n="nav.education">Formação</a>
         <a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Contato</a>
         <div class="mobile-nav-lang">
@@ -122,9 +124,6 @@
                     <span class="tl green"></span>
                 </div>
                 <span class="terminal-title-text">diogo@portfolio — bash</span>
-                <div class="terminal-badges">
-                    <span class="tbadge">ssh://portfolio.dev</span>
-                </div>
             </div>
             <div class="terminal-body" id="terminal-body">
                 <div id="terminal-output" class="terminal-output">
@@ -288,6 +287,68 @@
                         Casa do Construtor
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects-section">
+        <div class="section-header reveal">
+            <span class="section-tag" data-i18n="tag.projects">// projetos</span>
+            <h2 data-i18n="sec.projects">Projetos em Destaque</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card liquid-glass reveal">
+                <div class="project-card-header">
+                    <div class="project-title-group">
+                        <i class="fas fa-cloud-upload-alt project-icon"></i>
+                        <div>
+                            <div class="project-title" data-i18n="proj.title1">Migração AWS → OCI</div>
+                            <div class="project-company">Casa do Construtor</div>
+                        </div>
+                    </div>
+                    <div class="award-badge">
+                        <i class="fas fa-trophy"></i>
+                        <span data-i18n="proj.award">Reconhecido</span>
+                    </div>
+                </div>
+
+                <div class="project-metrics">
+                    <div class="project-metric">
+                        <div class="metric-value">R$60k</div>
+                        <div class="metric-label" data-i18n="proj.metric.saving">/mês economizados</div>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="project-metric">
+                        <div class="metric-value">6</div>
+                        <div class="metric-label" data-i18n="proj.metric.months">meses de projeto</div>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="project-metric">
+                        <div class="metric-value">3</div>
+                        <div class="metric-label" data-i18n="proj.metric.envs">ambientes entregues</div>
+                    </div>
+                </div>
+
+                <p class="project-desc" data-i18n="proj.desc1">Migração completa da infraestrutura cloud da AWS para OCI, reduzindo R$60.000/mês em custos operacionais. O projeto envolveu a reconstrução total dos ambientes, adição de um novo ambiente de homologação (antes apenas desenvolvimento e produção).</p>
+
+                <div class="project-tech-list">
+                    <span class="tech-chip">Kubernetes</span>
+                    <span class="tech-chip">Docker</span>
+                    <span class="tech-chip">Linux</span>
+                    <span class="tech-chip">OCI</span>
+                    <span class="tech-chip">AWS</span>
+                    <span class="tech-chip">GitLab</span>
+                    <span class="tech-chip">Prometheus</span>
+                    <span class="tech-chip">Grafana</span>
+                    <span class="tech-chip">Networking</span>
+                </div>
+
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7386491191455821824/" target="_blank" rel="noopener" class="project-proof-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span data-i18n="proj.linkedin">Ver reconhecimento no LinkedIn</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>

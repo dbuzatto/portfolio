@@ -903,6 +903,168 @@ section.terminal-section {
 }
 
 /* ============================================================
+   PROJECTS
+   ============================================================ */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.project-card {
+    padding: 28px 32px;
+    border-radius: var(--r);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.project-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.project-title-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.project-icon {
+    font-size: 22px;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+.project-company {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    letter-spacing: 0.03em;
+}
+
+.award-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffba08;
+    background: rgba(255, 186, 8, 0.1);
+    border: 1px solid rgba(255, 186, 8, 0.3);
+    flex-shrink: 0;
+}
+
+.award-badge i { font-size: 10px; }
+
+.project-metrics {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(0, 212, 255, 0.04);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    border-radius: calc(var(--r) - 4px);
+    overflow: hidden;
+}
+
+.project-metric {
+    flex: 1;
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.metric-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 5px;
+    letter-spacing: 0.03em;
+}
+
+.metric-divider {
+    width: 1px;
+    height: 44px;
+    background: rgba(0, 212, 255, 0.12);
+    flex-shrink: 0;
+}
+
+.project-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-chip {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 100px;
+    color: var(--accent);
+    background: rgba(0, 212, 255, 0.07);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.project-proof-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: var(--r);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    background: rgba(0, 212, 255, 0.04);
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease), gap 0.2s var(--ease);
+    align-self: flex-start;
+}
+
+.project-proof-link:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.4);
+    gap: 12px;
+}
+
+.project-proof-link .fa-arrow-right {
+    font-size: 11px;
+    transition: transform 0.2s var(--ease);
+}
+
+.project-proof-link:hover .fa-arrow-right {
+    transform: translateX(3px);
+}
+
+/* ============================================================
    EDUCATION
    ============================================================ */
 .education-grid {
