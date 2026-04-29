@@ -327,11 +327,11 @@
 <span class="output-empty"></span>
 <div class="output-text">Certificações em progressão:</div>
 <span class="output-empty"></span>
-<div class="cert-row"><span class="cert-status active">[● EM CURSO]</span><span>DevOps Professional – LinuxTips</span></div>
-<div class="cert-row"><span class="cert-status planned">[○ PRÓXIMO ]</span><span>KCNA – Kubernetes and Cloud Native Associate</span></div>
-<div class="cert-row"><span class="cert-status planned">[○ FUTURO  ]</span><span>CKA – Certified Kubernetes Administrator</span></div>
-<div class="cert-row"><span class="cert-status planned">[○ FUTURO  ]</span><span>CKAD – Certified Kubernetes Application Developer</span></div>
-<div class="cert-row"><span class="cert-status planned">[○ FUTURO  ]</span><span>CKS – Certified Kubernetes Security Specialist</span></div>
+<div class="cert-row"><span class="cert-status active">[EM CURSO]</span><span>DevOps Professional – LinuxTips</span></div>
+<div class="cert-row"><span class="cert-status planned">[PRÓXIMO]</span><span>KCNA – Kubernetes and Cloud Native Associate</span></div>
+<div class="cert-row"><span class="cert-status planned">[FUTURO]</span><span>CKA – Certified Kubernetes Administrator</span></div>
+<div class="cert-row"><span class="cert-status planned">[FUTURO]</span><span>CKAD – Certified Kubernetes Application Developer</span></div>
+<div class="cert-row"><span class="cert-status planned">[FUTURO]</span><span>CKS – Certified Kubernetes Security Specialist</span></div>
 <span class="output-empty"></span>
 <div class="output-text">Progresso: <span class="progress-bar-ascii">████░░░░░░░░░░░░░░░░</span> 20%</div>
 <span class="output-empty"></span>
@@ -430,11 +430,11 @@
 <span class="output-empty"></span>
 <div class="output-text">Certifications in progress:</div>
 <span class="output-empty"></span>
-<div class="cert-row"><span class="cert-status active">[● IN PROGRESS]</span><span>DevOps Professional – LinuxTips</span></div>
-<div class="cert-row"><span class="cert-status planned">[○ NEXT       ]</span><span>KCNA – Kubernetes and Cloud Native Associate</span></div>
-<div class="cert-row"><span class="cert-status planned">[○ FUTURE     ]</span><span>CKA – Certified Kubernetes Administrator</span></div>
-<div class="cert-row"><span class="cert-status planned">[○ FUTURE     ]</span><span>CKAD – Certified Kubernetes Application Developer</span></div>
-<div class="cert-row"><span class="cert-status planned">[○ FUTURE     ]</span><span>CKS – Certified Kubernetes Security Specialist</span></div>
+<div class="cert-row"><span class="cert-status active">[IN PROGRESS]</span><span>DevOps Professional – LinuxTips</span></div>
+<div class="cert-row"><span class="cert-status planned">[NEXT]</span><span>KCNA – Kubernetes and Cloud Native Associate</span></div>
+<div class="cert-row"><span class="cert-status planned">[FUTURE]</span><span>CKA – Certified Kubernetes Administrator</span></div>
+<div class="cert-row"><span class="cert-status planned">[FUTURE]</span><span>CKAD – Certified Kubernetes Application Developer</span></div>
+<div class="cert-row"><span class="cert-status planned">[FUTURE]</span><span>CKS – Certified Kubernetes Security Specialist</span></div>
 <span class="output-empty"></span>
 <div class="output-text">Progress: <span class="progress-bar-ascii">████░░░░░░░░░░░░░░░░</span> 20%</div>
 <span class="output-empty"></span>
@@ -630,6 +630,8 @@
             'tag.experience':       '// carreira',
             'sec.experience':       'Experiência Profissional',
             'exp.date1':            'AGO 2025 — ATUAL',
+            'exp.date2':            'MAR 2024 — AGO 2025',
+            'exp.date3':            '2023 — FEV 2024',
             'exp.current':          'Atual',
             'exp.role1':            'Analista DevOps Jr',
             'exp.role2':            'Assistente de Infraestrutura',
@@ -678,6 +680,8 @@
             'tag.experience':       '// career',
             'sec.experience':       'Professional Experience',
             'exp.date1':            'AUG 2025 — PRESENT',
+            'exp.date2':            'MAR 2024 — AUG 2025',
+            'exp.date3':            '2023 — FEB 2024',
             'exp.current':          'Current',
             'exp.role1':            'Jr DevOps Analyst',
             'exp.role2':            'Infrastructure Assistant',
