@@ -298,13 +298,7 @@
 <div class="output-text">&nbsp;&nbsp;Assistente de Infraestrutura · Casa do Construtor</div>
 <span class="output-empty"></span>
 <div class="output-accent">▸ 2023 – FEV 2024</div>
-<div class="output-text">&nbsp;&nbsp;Estagiário de Infraestrutura · Casa do Construtor</div>
-<span class="output-empty"></span>
-<div class="output-accent">▸ 2022 – JAN 2023</div>
-<div class="output-text">&nbsp;&nbsp;Vendedor de Comércio Varejista · Agrofer – ACP Acabamentos LTDA</div>
-<span class="output-empty"></span>
-<div class="output-accent">▸ 2018 – 2021</div>
-<div class="output-text">&nbsp;&nbsp;Ajudante Geral · Ricca Brindes Presentes e Produtos Personalizados LTDA</div>`,
+<div class="output-text">&nbsp;&nbsp;Estagiário de Infraestrutura · Casa do Construtor</div>`,
             education: `
 <div class="output-header">Formação Acadêmica:</div>
 <span class="output-empty"></span>
@@ -401,13 +395,7 @@
 <div class="output-text">&nbsp;&nbsp;Infrastructure Assistant · Casa do Construtor</div>
 <span class="output-empty"></span>
 <div class="output-accent">▸ 2023 – FEB 2024</div>
-<div class="output-text">&nbsp;&nbsp;Infrastructure Intern · Casa do Construtor</div>
-<span class="output-empty"></span>
-<div class="output-accent">▸ 2022 – JAN 2023</div>
-<div class="output-text">&nbsp;&nbsp;Retail Sales Associate · Agrofer – ACP Acabamentos LTDA</div>
-<span class="output-empty"></span>
-<div class="output-accent">▸ 2018 – 2021</div>
-<div class="output-text">&nbsp;&nbsp;General Assistant · Ricca Brindes Presentes e Produtos Personalizados LTDA</div>`,
+<div class="output-text">&nbsp;&nbsp;Infrastructure Intern · Casa do Construtor</div>`,
             education: `
 <div class="output-header">Academic Background:</div>
 <span class="output-empty"></span>
@@ -636,8 +624,6 @@
             'exp.role1':            'Analista DevOps Jr',
             'exp.role2':            'Assistente de Infraestrutura',
             'exp.role3':            'Estagiário de Infraestrutura',
-            'exp.role4':            'Vendedor de Comércio Varejista',
-            'exp.role5':            'Ajudante Geral',
             'tag.education':        '// formação',
             'sec.education':        'Educação & Certificações',
             'edu.degree1':          'Engenharia da Computação',
@@ -686,8 +672,6 @@
             'exp.role1':            'Jr DevOps Analyst',
             'exp.role2':            'Infrastructure Assistant',
             'exp.role3':            'Infrastructure Intern',
-            'exp.role4':            'Retail Sales Associate',
-            'exp.role5':            'General Assistant',
             'tag.education':        '// education',
             'sec.education':        'Education & Certifications',
             'edu.degree1':          'Computer Engineering',
