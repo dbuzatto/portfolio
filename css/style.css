@@ -40,7 +40,7 @@
     --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 body {
     background: var(--bg);
@@ -69,11 +69,9 @@ body {
    LIQUID GLASS COMPONENT
    ============================================================ */
 .liquid-glass {
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.08) 0%,
-        rgba(255, 255, 255, 0.025) 100%
-    );
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.025) 100%),
+        rgba(8, 8, 20, 0.80);
     backdrop-filter: blur(32px) saturate(180%);
     -webkit-backdrop-filter: blur(32px) saturate(180%);
     border: 1px solid var(--border);
@@ -135,23 +133,63 @@ body {
     display: flex;
     gap: 4px;
     margin-left: auto;
+    position: relative;
 }
 
+/* Pill deslizante — se move entre os botões no hover */
+.nav-pill,
+.lang-pill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: var(--r);
+    pointer-events: none;
+    opacity: 0;
+    transition:
+        left    0.5s cubic-bezier(0.22, 1.2, 0.36, 1),
+        width   0.5s cubic-bezier(0.22, 1.2, 0.36, 1),
+        top     0.5s cubic-bezier(0.22, 1.2, 0.36, 1),
+        height  0.5s cubic-bezier(0.22, 1.2, 0.36, 1),
+        opacity 0.2s ease;
+}
+
+.nav-pill.visible,
+.lang-pill.visible { opacity: 1; }
+
+/* Section pill — sliding brightness highlight for clickable cards */
+.section-pill {
+    position: absolute;
+    background: transparent;
+    backdrop-filter: brightness(1.3);
+    -webkit-backdrop-filter: brightness(1.3);
+    border-radius: var(--r);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10;
+    transition:
+        left    0.5s cubic-bezier(0.22, 1.2, 0.36, 1),
+        width   0.5s cubic-bezier(0.22, 1.2, 0.36, 1),
+        top     0.5s cubic-bezier(0.22, 1.2, 0.36, 1),
+        height  0.5s cubic-bezier(0.22, 1.2, 0.36, 1),
+        opacity 0.2s ease;
+}
+.section-pill.visible { opacity: 1; }
+
 .nav-link {
+    position: relative;
     color: var(--text-muted);
     text-decoration: none;
     font-size: 13px;
     font-weight: 500;
     padding: 6px 14px;
     border-radius: var(--r);
-    transition: color 0.2s, background 0.2s;
+    transition: color 0.2s;
     letter-spacing: 0.01em;
+    z-index: 1;
 }
 
-.nav-link:hover {
-    color: var(--text);
-    background: var(--surface-hover);
-}
+.nav-link:hover { color: var(--text); }
 
 .lang-switcher {
     display: flex;
@@ -160,6 +198,7 @@ body {
     padding-left: 16px;
     border-left: 1px solid var(--border);
     flex-shrink: 0;
+    position: relative;
 }
 
 .lang-sep {
@@ -182,7 +221,7 @@ body {
     transition: color 0.2s, background 0.2s;
 }
 
-.lang-btn:hover { color: var(--text); background: var(--surface-hover); }
+.lang-btn:hover { color: var(--text); }
 .lang-btn.active { color: var(--accent); }
 
 @keyframes pulse-dot {
@@ -526,6 +565,9 @@ section.terminal-section {
     border-radius: var(--r-lg);
     overflow: hidden;
     font-family: var(--mono);
+    background: rgba(8, 8, 20, 0.97);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     box-shadow: 0 32px 80px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255,255,255,0.06);
 }
 
@@ -804,12 +846,6 @@ section.terminal-section {
     animation-delay: calc(var(--i, 0) * 90ms + 200ms);
 }
 
-.skill-item:hover {
-    border-color: rgba(0, 212, 255, 0.4);
-    transform: translateX(5px);
-    background: rgba(0, 212, 255, 0.05);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-dim);
-}
 
 @media (prefers-reduced-motion: reduce) {
     .skill-item { opacity: 1; transform: none; animation: none !important; }
@@ -912,11 +948,6 @@ section.terminal-section {
         box-shadow 0.3s var(--ease);
 }
 
-.timeline-card:hover {
-    border-color: rgba(0, 212, 255, 0.3);
-    transform: translateX(5px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 24px var(--accent-dim);
-}
 
 .timeline-role {
     font-size: 15px;
@@ -1133,11 +1164,6 @@ section.terminal-section {
         box-shadow 0.3s;
 }
 
-.edu-card:hover {
-    border-color: rgba(0,212,255,0.3);
-    transform: translateY(-5px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.6), 0 0 24px var(--accent-dim);
-}
 
 .edu-icon {
     width: 50px;
@@ -1333,6 +1359,7 @@ section.terminal-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap: 16px;
+    position: relative;
 }
 
 .contact-card {
@@ -1351,19 +1378,11 @@ section.terminal-section {
 }
 
 .contact-card:not(.static):hover {
-    border-color: rgba(0,212,255,0.35);
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 24px var(--accent-dim);
 }
 
 .contact-card:not(.static):hover .contact-arrow {
-    color: var(--accent);
     transform: translateX(4px);
-}
-
-.contact-card:not(.static):hover .contact-icon {
-    background: var(--accent-dim);
-    border-color: rgba(0,212,255,0.3);
 }
 
 .contact-icon {

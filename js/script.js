@@ -120,6 +120,51 @@
 })();
 
 /* ============================================================
+   SMOOTH SCROLL — custom duration & easing
+   ============================================================ */
+(function () {
+    function easeInOutQuart(t) {
+        return t < 0.5
+            ? 8 * t * t * t * t
+            : 1 - Math.pow(-2 * t + 2, 4) / 2;
+    }
+
+    function smoothScrollTo(targetY, duration) {
+        const startY = window.scrollY;
+        const diff   = targetY - startY;
+        let start    = null;
+
+        function step(timestamp) {
+            if (!start) start = timestamp;
+            const elapsed  = timestamp - start;
+            const progress = Math.min(elapsed / duration, 1);
+            window.scrollTo(0, startY + diff * easeInOutQuart(progress));
+            if (progress < 1) requestAnimationFrame(step);
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    document.addEventListener('click', function (e) {
+        const link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+
+        const id = link.getAttribute('href').slice(1);
+        if (!id) return;
+
+        const target = document.getElementById(id);
+        if (!target) return;
+
+        e.preventDefault();
+
+        const navbarHeight = 88;
+        const targetY = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+        smoothScrollTo(targetY, 900);
+    });
+})();
+
+/* ============================================================
    TYPEWRITER EFFECT
    ============================================================ */
 (function () {
@@ -158,6 +203,44 @@
     }
 
     setTimeout(tick, 800);
+})();
+
+/* ============================================================
+   NAV PILL — sliding hover indicator
+   ============================================================ */
+(function () {
+    function makePill(container, itemSelector, pillClass) {
+        if (!container) return;
+
+        const pill = document.createElement('span');
+        pill.className = pillClass;
+        container.prepend(pill);
+
+        function moveTo(el) {
+            const parentRect = container.getBoundingClientRect();
+            const elRect     = el.getBoundingClientRect();
+            pill.style.left         = (elRect.left - parentRect.left) + 'px';
+            pill.style.top          = (elRect.top  - parentRect.top)  + 'px';
+            pill.style.width        = elRect.width  + 'px';
+            pill.style.height       = elRect.height + 'px';
+            pill.style.borderRadius = window.getComputedStyle(el).borderRadius;
+            pill.classList.add('visible');
+        }
+
+        container.querySelectorAll(itemSelector).forEach(el => {
+            el.addEventListener('mouseenter', () => moveTo(el));
+        });
+
+        container.addEventListener('mouseleave', () => {
+            pill.classList.remove('visible');
+        });
+    }
+
+    makePill(document.querySelector('.nav-links'),    '.nav-link',  'nav-pill');
+    makePill(document.querySelector('.lang-switcher'), '.lang-btn', 'lang-pill');
+
+    // Section pill — somente contact cards (elementos clicáveis)
+    makePill(document.querySelector('.contact-grid'), '.contact-card:not(.static)', 'section-pill');
 })();
 
 /* ============================================================
